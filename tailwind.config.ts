@@ -52,6 +52,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Coffee shop custom colors
+				'coffee-warm': 'hsl(var(--coffee-warm))',
+				'coffee-light': 'hsl(var(--coffee-light))',
+				'velka-yellow': 'hsl(var(--velka-yellow))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
