@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-coffee.jpg";
 import velkaLogo from "@/assets/velka-logo.png";
-import catMascot from "@/assets/cat-mascot.png";
+import catMascot from "@/assets/cat-mascot-real.png";
 
 const Hero = () => {
   return (

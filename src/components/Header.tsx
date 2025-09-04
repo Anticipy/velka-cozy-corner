@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import velkaLogo from "@/assets/velka-logo.png";
-import catMascot from "@/assets/cat-mascot.png";
+import catMascot from "@/assets/cat-mascot-real.png";
 
 const Header = () => {
   return (

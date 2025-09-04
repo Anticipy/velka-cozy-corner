@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import cafeInterior from "@/assets/cafe-interior.jpg";
+import cafeInterior from "@/assets/cafe-interior-real.jpg";
 
 const About = () => {
   return (
@@ -14,7 +14,7 @@ const About = () => {
               className="rounded-2xl shadow-lg w-full h-[500px] object-cover"
             />
             <div className="absolute -top-6 -right-6 bg-primary p-4 rounded-full shadow-lg">
-              <span className="text-3xl">☕🐱</span>
+              <span className="text-3xl text-primary-foreground font-bold">V</span>
             </div>
           </div>
           
@@ -36,7 +36,7 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               From carefully selected beans to the perfect brewing techniques, every detail 
               is crafted with love. Whether you're starting your morning or taking an afternoon 
-              break, our little corner cat mascot is always ready to welcome you.
+              break, our welcoming atmosphere is always ready to embrace you.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6 mt-8">

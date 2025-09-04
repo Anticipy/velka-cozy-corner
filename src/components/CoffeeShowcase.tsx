@@ -79,7 +79,6 @@ const CoffeeShowcase = () => {
             Want to see our full menu? Visit us in store!
           </p>
           <div className="flex items-center justify-center space-x-2 text-primary">
-            <span className="text-2xl">☕🐱</span>
             <span className="font-medium">Fresh daily selections available</span>
           </div>
         </div>

@@ -8,12 +8,12 @@ import cafeInterior from "@/assets/cafe-interior.jpg";
 const InstagramGallery = () => {
   // Simulated Instagram posts - you can replace with actual Instagram API integration
   const instagramPosts = [
-    { image: heroImage, likes: "127", caption: "Perfect latte art this morning ☕✨" },
-    { image: coffeePour, likes: "89", caption: "Fresh pour over in progress 🌊" },
-    { image: cafeInterior, likes: "203", caption: "Our cozy corner is ready for you 🐱" },
-    { image: espressoShot, likes: "156", caption: "Rich espresso shot perfection ☕" },
-    { image: heroImage, likes: "178", caption: "Sunday vibes at Velka Koffie 💛" },
-    { image: coffeePour, likes: "94", caption: "Brewing happiness one cup at a time ☕🐱" }
+    { image: heroImage, likes: "127", caption: "Perfect latte art this morning" },
+    { image: coffeePour, likes: "89", caption: "Fresh pour over in progress" },
+    { image: cafeInterior, likes: "203", caption: "Our cozy corner is ready for you" },
+    { image: espressoShot, likes: "156", caption: "Rich espresso shot perfection" },
+    { image: heroImage, likes: "178", caption: "Sunday vibes at Velka Koffie" },
+    { image: coffeePour, likes: "94", caption: "Brewing happiness one cup at a time" }
   ];
 
   return (
@@ -42,7 +42,7 @@ const InstagramGallery = () => {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
                     <div className="flex items-center space-x-2">
-                      <span>❤️</span>
+                      <span>♥</span>
                       <span className="font-semibold">{post.likes}</span>
                     </div>
                   </div>
@@ -56,11 +56,12 @@ const InstagramGallery = () => {
           <Button 
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mb-4"
             size="lg"
+            onClick={() => window.open('https://www.instagram.com/velkakoffie/', '_blank')}
           >
             @velkakoffie
           </Button>
           <p className="text-muted-foreground">
-            Follow us for daily coffee inspiration and cozy moments ☕🐱
+            Follow us for daily coffee inspiration and cozy moments
           </p>
         </div>
       </div>
