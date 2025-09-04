@@ -17,29 +17,23 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center md:text-left">
         <div className="max-w-2xl">
-          {/* Professional Large Logo */}
-          <div className="mb-8 inline-block">
-            <div className="relative">
-              <img 
-                src={velkaLogo} 
-                alt="Velka Koffie" 
-                className="w-48 h-48 md:w-64 md:h-64 rounded-2xl shadow-2xl object-cover"
-              />
+          {/* Clean tagline with mascot */}
+          <div className="mb-8">
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold text-foreground mb-6">
+              Velka Koffie
+            </h1>
+            <div className="flex items-center justify-center md:justify-start space-x-4 mb-6">
+              <div className="w-12 h-12">
+                <img 
+                  src={catMascot} 
+                  alt="Coffee Cat Mascot" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <p className="text-xl md:text-2xl text-muted-foreground font-playfair font-medium">
+                Your cozy coffee corner in Antwerp
+              </p>
             </div>
-          </div>
-          
-          {/* Professional mascot and tagline */}
-          <div className="mb-8 flex items-center justify-center md:justify-start space-x-4">
-            <div className="w-16 h-16">
-              <img 
-                src={catMascot} 
-                alt="Coffee Cat Mascot" 
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <p className="text-xl md:text-2xl text-muted-foreground font-playfair font-medium">
-              Your cozy coffee corner in Antwerp
-            </p>
           </div>
           
           <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto md:mx-0 font-inter">

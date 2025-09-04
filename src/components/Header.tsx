@@ -15,14 +15,6 @@ const Header = () => {
               className="w-16 h-16 rounded-xl object-cover shadow-md"
             />
           </div>
-          {/* Professional Cat Mascot */}
-          <div className="w-10 h-10">
-            <img 
-              src={catMascot} 
-              alt="Coffee Cat Mascot" 
-              className="w-full h-full object-contain"
-            />
-          </div>
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">

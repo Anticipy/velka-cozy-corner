@@ -1,3 +1,5 @@
+import velkaLogo from "@/assets/velka-logo.png";
+
 const Footer = () => {
   return (
     <footer id="contact" className="bg-secondary text-secondary-foreground py-16">
@@ -6,11 +8,11 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-primary px-3 py-2 rounded-lg">
-                <span className="font-bold text-xl text-foreground">VELKA</span>
-                <div className="text-xs text-foreground/80 -mt-1">KOFFIE</div>
-              </div>
-              <span className="text-2xl">☕🐱</span>
+              <img 
+                src={velkaLogo} 
+                alt="Velka Koffie Logo" 
+                className="w-12 h-12 rounded-lg object-cover shadow-md"
+              />
             </div>
             <p className="text-secondary-foreground/80 mb-6 max-w-md">
               Your cozy coffee corner in the heart of Antwerp. Where every cup tells a story 
@@ -18,10 +20,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-secondary-foreground hover:text-primary transition-colors">
-                📘 Facebook
+                Facebook
               </a>
-              <a href="#" className="text-secondary-foreground hover:text-primary transition-colors">
-                📷 Instagram
+              <a href="https://www.instagram.com/velkakoffie/" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground hover:text-primary transition-colors">
+                Instagram
               </a>
             </div>
           </div>
@@ -30,9 +32,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-secondary-foreground mb-4">Visit Us</h3>
             <div className="space-y-3 text-secondary-foreground/80">
-              <p>📍 Somewhere Cozy Street<br />Antwerp, Belgium</p>
-              <p>📞 +32 3 XXX XXXX</p>
-              <p>✉️ hello@velkakoffie.be</p>
+              <p>Somewhere Cozy Street<br />Antwerp, Belgium</p>
+              <p>+32 3 XXX XXXX</p>
+              <p>hello@velkakoffie.be</p>
             </div>
           </div>
           
@@ -50,11 +52,7 @@ const Footer = () => {
         <div className="border-t border-secondary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary-foreground/60 text-sm">
-              © 2024 Velka Koffie. Made with ☕ and 💛 in Antwerp.
-            </p>
-            <p className="text-secondary-foreground/60 text-sm flex items-center space-x-2">
-              <span>Crafted by our little cat mascot</span>
-              <span>🐱</span>
+              © 2024 Velka Koffie. Made with love in Antwerp.
             </p>
           </div>
         </div>
