@@ -1,22 +1,61 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-coffee.jpg";
-import coffeePour from "@/assets/coffee-pour.jpg";
-import espressoShot from "@/assets/espresso-shot.jpg";
-import cafeInterior from "@/assets/cafe-interior.jpg";
+import { useState, useEffect } from "react";
 
-const InstagramGallery = () => {
-  // Simulated Instagram posts - you can replace with actual Instagram API integration
-  const instagramPosts = [
-    { image: heroImage, likes: "127" },
-    { image: coffeePour, likes: "89" },
-    { image: cafeInterior, likes: "203" },
-    { image: espressoShot, likes: "156" },
-    { image: heroImage, likes: "178" },
-    { image: coffeePour, likes: "94" }
+interface InstagramPost {
+  id: string;
+  media_type: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM';
+  media_url: string;
+  permalink: string;
+  caption?: string;
+  timestamp: string;
+}
+
+const InstagramFeed = () => {
+  const [posts, setPosts] = useState<InstagramPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fallback images if Instagram API is not available
+  const fallbackImages = [
+    { image: "/src/assets/hero-coffee.jpg", likes: "127" },
+    { image: "/src/assets/coffee-pour.jpg", likes: "89" },
+    { image: "/src/assets/cafe-interior.jpg", likes: "203" },
+    { image: "/src/assets/espresso-shot.jpg", likes: "156" },
+    { image: "/src/assets/hero-coffee.jpg", likes: "178" },
+    { image: "/src/assets/coffee-pour.jpg", likes: "94" }
   ];
 
+  useEffect(() => {
+    // For now, we'll use fallback images
+    // In production, you would implement Instagram Basic Display API here
+    setPosts(fallbackImages.map((img, index) => ({
+      id: `fallback-${index}`,
+      media_type: 'IMAGE' as const,
+      media_url: img.image,
+      permalink: 'https://www.instagram.com/velkakoffie/',
+      caption: `Coffee moment ${index + 1}`,
+      timestamp: new Date().toISOString()
+    })));
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="gallery" className="py-24 bg-muted/10 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <div className="animate-pulse">
+              <div className="h-12 bg-muted rounded w-64 mx-auto mb-6"></div>
+              <div className="h-4 bg-muted rounded w-48 mx-auto mb-12"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section id="gallery" className="py-24 bg-muted/10 relative overflow-hidden">
+    <section id="gallery" className="py-24 bg-muted/10 relative overflow-hidden border-t border-muted/40">
       {/* Decorative grid pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -40,19 +79,19 @@ const InstagramGallery = () => {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-5xl mx-auto mb-16">
-          {instagramPosts.map((post, index) => (
-            <div key={index} className="group cursor-pointer relative">
+          {posts.slice(0, 6).map((post, index) => (
+            <div key={post.id} className="group cursor-pointer relative">
               <div className="relative overflow-hidden rounded-xl aspect-square border-2 border-transparent group-hover:border-foreground/20 transition-all duration-300">
                 <img 
-                  src={post.image} 
-                  alt={`Instagram post ${index + 1}`}
+                  src={post.media_url} 
+                  alt={post.caption || `Instagram post ${index + 1}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">♥</span>
-                      <span className="font-medium">{post.likes}</span>
+                      <span className="font-medium">Like</span>
                     </div>
                   </div>
                 </div>
@@ -77,4 +116,4 @@ const InstagramGallery = () => {
   );
 };
 
-export default InstagramGallery;
+export default InstagramFeed;

@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CoffeeShowcase from "@/components/CoffeeShowcase";
-import InstagramGallery from "@/components/InstagramGallery";
+import SectionSeparator from "@/components/SectionSeparator";
+import InstagramEmbeds from "@/components/InstagramEmbeds";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -12,7 +13,8 @@ const Index = () => {
       <Hero />
       <About />
       <CoffeeShowcase />
-      <InstagramGallery />
+      <SectionSeparator />
+      <InstagramEmbeds />
       <Footer />
     </div>
   );

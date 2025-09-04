@@ -12,7 +12,7 @@ const Header = () => {
             <img 
               src={velkaLogo} 
               alt="Velka Koffie Logo" 
-              className="w-16 h-16 rounded-xl object-cover shadow-md"
+              className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl object-cover shadow-md"
             />
           </div>
         </div>
@@ -24,7 +24,11 @@ const Header = () => {
           <a href="#contact" className="text-foreground hover:text-primary transition-colors font-inter">Contact</a>
         </nav>
 
-        <Button variant="outline" className="hidden md:block font-inter">
+        <Button 
+          variant="outline" 
+          className="hidden md:block font-inter"
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+        >
           Visit Us
         </Button>
       </div>

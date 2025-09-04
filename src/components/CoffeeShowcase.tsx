@@ -1,5 +1,3 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import coffeePour from "@/assets/coffee-pour.jpg";
 import espressoShot from "@/assets/espresso-shot.jpg";
 import heroImage from "@/assets/hero-coffee.jpg";
@@ -10,77 +8,63 @@ const CoffeeShowcase = () => {
       name: "Signature Latte",
       description: "Smooth espresso with perfectly steamed milk and beautiful latte art",
       image: heroImage,
-      price: "€4.50",
-      popular: true
+      price: "€4.50"
     },
     {
       name: "Artisan Pour Over",
       description: "Single-origin beans brewed to perfection with precision and care",
       image: coffeePour,
-      price: "€5.00",
-      popular: false
+      price: "€5.00"
     },
     {
       name: "Rich Espresso",
       description: "Bold, full-bodied espresso shot with a perfect golden crema",
       image: espressoShot,
-      price: "€2.50",
-      popular: true
+      price: "€2.50"
     }
   ];
 
   return (
-    <section id="coffee" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Our Coffee Selection
+    <section id="coffee" className="py-24 bg-muted/20 relative overflow-hidden border-t border-muted/30">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-32 right-20 w-40 h-40 border border-foreground/20 rounded-full"></div>
+        <div className="absolute bottom-32 left-20 w-32 h-32 border border-foreground/20 rounded-full"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-playfair font-light text-foreground mb-6">
+            Our Coffee
           </h2>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every cup is crafted with passion and precision. Discover our signature blends 
-            that make Velka Koffie a destination for coffee lovers in Antwerp.
+          <div className="w-24 h-px bg-foreground/20 mx-auto mb-6"></div>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto font-light">
+            Every cup is crafted with passion and precision.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {coffeeTypes.map((coffee, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300 border-accent">
-              <div className="relative">
+            <div key={index} className="text-center group">
+              <div className="relative mb-6 overflow-hidden rounded-lg">
                 <img 
                   src={coffee.image} 
                   alt={coffee.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {coffee.popular && (
-                  <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
-                    Popular
-                  </Badge>
-                )}
-                <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="font-semibold text-foreground">{coffee.price}</span>
-                </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  {coffee.name}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {coffee.description}
-                </p>
-              </div>
-            </Card>
+              <h3 className="text-2xl font-playfair font-medium text-foreground mb-3">
+                {coffee.name}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                {coffee.description}
+              </p>
+              <p className="text-lg font-medium text-foreground">
+                {coffee.price}
+              </p>
+            </div>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Want to see our full menu? Visit us in store!
-          </p>
-          <div className="flex items-center justify-center space-x-2 text-primary">
-            <span className="font-medium">Fresh daily selections available</span>
-          </div>
         </div>
       </div>
     </section>

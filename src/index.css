@@ -9,13 +9,13 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Coffee Shop Color Palette */
-    --background: 45 35% 96%;
+    --background: 25 35% 88%;
     --foreground: 25 8% 15%;
 
-    --card: 45 35% 98%;
+    --card: 25 30% 92%;
     --card-foreground: 25 8% 15%;
 
-    --popover: 45 35% 98%;
+    --popover: 25 30% 92%;
     --popover-foreground: 25 8% 15%;
 
     /* Velka Yellow Brand Color */
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --secondary-foreground: 45 35% 96%;
 
     /* Warm Cream Tones */
-    --muted: 40 25% 92%;
+    --muted: 30 20% 88%;
     --muted-foreground: 25 8% 45%;
 
     --accent: 35 45% 85%;
